@@ -29,7 +29,8 @@ export const StyledHeader = styled.header`
     }
 
     & > nav > ul > li > a:hover,
-    & > nav > ul > li > a:active
+    & > nav > ul > li > a:active,
+    & > nav > ul > li > a.active
     {
         color: ${props => props.theme.background};
         border-bottom: 2px solid ${props => props.theme.background};
