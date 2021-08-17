@@ -3,7 +3,7 @@ import GlobalStyle from "./styled-components/GlobalStyle";
 import { theme } from "./styled-components/Theme";
 import Layout from "./Layout/Layout";
 import { Switch, Route, Redirect } from 'react-router-dom'
-
+import Home from './Pages/Home';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           </Route>
 
           <Route path="/filmes" exact>
-            <h4>AllFilms</h4>
+            <Home />
           </Route>
 
           <Route path="/filmes/favoritos">
