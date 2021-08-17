@@ -11,7 +11,6 @@ function App() {
       <GlobalStyle />
 
       <Layout>
-        <h2>Hello Babys!</h2>
 
         <Switch>
 
