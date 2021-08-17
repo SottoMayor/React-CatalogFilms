@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react';
 import Header from './Header';
+import { StyledContainer } from '../styled-components/Styles';
 
 const Layout = (props) => {
     return (
         <Fragment>
             <Header/>
-            <main>
+            <StyledContainer>
                 {props.children}
-            </main> 
+            </StyledContainer> 
         </Fragment>
     )
 }

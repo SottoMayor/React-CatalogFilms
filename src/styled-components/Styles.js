@@ -1,4 +1,11 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+
+export const UICard = css`
+
+  box-shadow: 4px 4px 10px -5px rgba(0,0,0,0.75);
+  border-radius: 12px;
+
+`
 
 export const StyledHeader = styled.header`
 
@@ -35,6 +42,14 @@ export const StyledHeader = styled.header`
         color: ${props => props.theme.background};
         border-bottom: 2px solid ${props => props.theme.background};
     }
+
+`
+
+export const StyledContainer = styled.main`
+
+    padding: 3% 2%;
+    margin: 0 auto;
+    display: block;
 
 `
 
@@ -119,4 +134,51 @@ export const StyledLoading = styled.div`
       transform: rotate(360deg);
     }
   }
+`
+
+export const StyledFilm = styled.article`
+
+  &{
+    width: 100%;
+    max-width: 650px;
+    height: 175px;
+    margin: 15px auto;
+    background-color: ${props => props.theme.secondary};
+    color: ${props => props.theme.text};
+    display: flex;
+    padding: -5px 0;
+    padding-right: 1%;
+    ${UICard};
+  }
+
+  .figure{
+    width: 400px;
+    height: 100%;
+  }
+  
+  .figure > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  .info{
+    width: calc(250px - 1%);
+    padding: 3%;
+  }
+
+  .info__name{
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 100px;
+    height: 65px;
+  }
+
+  .info__btn{
+    margin-top: calc(50px + 2%);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+
 `

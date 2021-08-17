@@ -9,6 +9,10 @@ export default createGlobalStyle`
         font-family: 'Comfortaa', cursive;
     }
 
+    body{
+        background-color: ${props => props.theme.background}
+    }
+
     @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 `
