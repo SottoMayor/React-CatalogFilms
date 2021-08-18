@@ -3,36 +3,39 @@ import axios from '../axios';
 import Loading from '../Components/UI/Loading';
 
 import Film from '../Components/Film';
-import Backdrop from '../Components/UI/Backdrop';
-import Modal from '../Components/UI/Modal';
+import Alert from '../Layout/Alert';
 
 const Home = () => {
 
     const [films, setFilms] = useState([]);
-    const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [show, setShow] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(() =>{
         const loadingFilmsHandler = async () => {
+            setError(null)
             setLoading(true);
             try{
                 const response = await axios.get('/r-api/?api=filmes/');
-                setFilms(response.data);
-                setLoading(false);
 
-            }catch(error){
+                setFilms(response.data);
+                
+            }catch(err){
                 setError(true);
-                setLoading(false);
             }
+            setShow(true);
+            setLoading(false);
         }
 
         loadingFilmsHandler();
     },[])
 
+    let content;
+
     return (
         <section>
-            <Backdrop show/>
-            <Modal show>Aparentemente está funcionando!</Modal>
+            <Alert show={show}>Deu erro</Alert>
             {loading && <Loading/>}
             {!loading && films.map(film => <Film {...film} key={film.id}/>)}
         </section>
