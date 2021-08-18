@@ -123,7 +123,7 @@ export const StyledLoading = styled.div`
   }
 `
 
-export const StyledModal = styled.main`
+export const StyledModal = styled.div`
 
   & {
     z-index: 100;
@@ -133,7 +133,7 @@ export const StyledModal = styled.main`
     margin: 0 auto;
     background: ${props => props.theme.primary};
     color: ${props => props.theme.text};
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -145,7 +145,17 @@ export const StyledModal = styled.main`
     font-size: 18px ;
   }
 
+`
 
+export const StyledBackdrop = styled.div`
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 75;
 
 `
 

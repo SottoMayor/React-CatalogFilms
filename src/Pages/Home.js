@@ -3,6 +3,7 @@ import axios from '../axios';
 import Loading from '../Components/UI/Loading';
 
 import Film from '../Components/Film';
+import Backdrop from '../Components/UI/Backdrop';
 import Modal from '../Components/UI/Modal';
 
 const Home = () => {
@@ -30,6 +31,8 @@ const Home = () => {
 
     return (
         <section>
+            <Backdrop show/>
+            <Modal show>Aparentemente está funcionando!</Modal>
             {loading && <Loading/>}
             {!loading && films.map(film => <Film {...film} key={film.id}/>)}
         </section>
