@@ -11,7 +11,8 @@ export const UICard = css`
 export const UIButton = css`
 
   & { 
-  padding: 3px;
+  padding: 5px;
+  border-radius: 5px;
   border: 2px solid ${props => props.theme.background};
   background: ${props => props.theme.primary};
   color: ${props => props.theme.text};
@@ -29,7 +30,6 @@ export const UIButton = css`
     color: ${props => props.theme.tertiary};
     cursor: not-allowed;
   }
-
 
 `
 // Styled Components UIs
@@ -158,6 +158,45 @@ export const StyledBackdrop = styled.div`
   z-index: 75;
 
 `
+
+export const StyledAlertStatus = styled.section`
+
+  &{
+    ${UICard};
+    padding: 10px 0;
+  }
+
+  & > figure{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-itmes: center;
+    padding: 0px;
+    margin: 0 auto;
+  }
+  
+  & > figure > img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-itmes: center;
+  }
+
+  & > main{
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  & > footer{
+    display: flex;
+    justify-content: center;
+    align-itmes: center;
+  }
+
+  `
 
 // Styled Components
 

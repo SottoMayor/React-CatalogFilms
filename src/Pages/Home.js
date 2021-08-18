@@ -4,6 +4,7 @@ import Loading from '../Components/UI/Loading';
 
 import Film from '../Components/Film';
 import Alert from '../Layout/Alert';
+import AlertStatus from '../Components/UI/AlertStatus';
 
 const Home = () => {
 
@@ -31,11 +32,12 @@ const Home = () => {
         loadingFilmsHandler();
     },[])
 
-    let content;
 
     return (
         <section>
-            <Alert show={show}>Deu erro</Alert>
+            <Alert show={show}>
+                <AlertStatus status='warning'>Funciona!</AlertStatus>
+            </Alert>
             {loading && <Loading/>}
             {!loading && films.map(film => <Film {...film} key={film.id}/>)}
         </section>
