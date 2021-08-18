@@ -187,7 +187,6 @@ export const StyledAlertStatus = styled.section`
   & > main{
     padding: 10px 0;
     text-align: center;
-    font-size: 18px;
   }
 
   & > footer{

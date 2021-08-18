@@ -35,7 +35,7 @@ const AlertStatus = (props) => {
                 {image}
             </figure>
             <main>
-                {props.children}
+                <h3>{props.children}</h3>
             </main>
             <footer>
                 <Button>OK!</Button>
