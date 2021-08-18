@@ -3,6 +3,7 @@ import axios from '../axios';
 import Loading from '../Components/UI/Loading';
 
 import Film from '../Components/Film';
+import Modal from '../Components/UI/Modal';
 
 const Home = () => {
 

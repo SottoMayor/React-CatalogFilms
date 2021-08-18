@@ -123,6 +123,32 @@ export const StyledLoading = styled.div`
   }
 `
 
+export const StyledModal = styled.main`
+
+  & {
+    z-index: 100;
+    max-width: 100%;
+    width: 750px;
+    display: block;
+    margin: 0 auto;
+    background: ${props => props.theme.primary};
+    color: ${props => props.theme.text};
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  & > header{
+    padding: 3% 2%;
+    text-align: center;
+    font-size: 18px ;
+  }
+
+
+
+`
+
 // Styled Components
 
 export const StyledHeader = styled.header`
