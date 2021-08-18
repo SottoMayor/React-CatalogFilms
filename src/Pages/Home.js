@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { alertAction } from '../store';
 import axios from '../axios';
-import Loading from '../Components/UI/Loading';
 
+import Loading from '../Components/UI/Loading';
 import Film from '../Components/Film';
 import Alert from '../Layout/Alert';
 import AlertStatus from '../Components/UI/AlertStatus';
@@ -10,10 +12,15 @@ const Home = () => {
 
     const [films, setFilms] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [show, setShow] = useState(false);
     const [error, setError] = useState(null);
     const [message, setMessage] = useState('');
 
+    const showAlert = useSelector(state => state.alert.show);
+    const dispatch = useDispatch()
+
+    const closeModalHandler = () => {
+        dispatch(alertAction.closeAlert())
+    }
     
     const loadingFilmsHandler = useCallback( async () => {
         setError(null)
@@ -28,9 +35,9 @@ const Home = () => {
             setError(true);
             setMessage('Algo deu errado! Pedimos desculpa pelo incômodo.');
         }
-        setShow(true);
+        dispatch(alertAction.showAlert());
         setLoading(false);
-    }, [])
+    }, [dispatch])
     
     useEffect(() =>{
         loadingFilmsHandler();
@@ -38,11 +45,12 @@ const Home = () => {
     
     return (
         <section>
-            <Alert show={show}>
+            <Alert show={showAlert} clicked={closeModalHandler}>
                 <AlertStatus status={error ? 'fail' : 'success'}>{message}</AlertStatus>
             </Alert>
             {loading && <Loading/>}
-            {!loading && films.map(film => <Film {...film} key={film.id}/>)}
+            {!loading && films.length > 0 && films.map(film => <Film {...film} key={film.id}/>)}
+            {!loading && films.length === 0 && <AlertStatus status='warning' hideButton>Você não possui filmes cadastrados!</AlertStatus>}
         </section>
     )
 }

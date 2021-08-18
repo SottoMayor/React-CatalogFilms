@@ -1,10 +1,13 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { alertAction } from '../../store/index'
 
 import CancelPNG from '../../Assets/cancel.png';
 import CheckPNG from '../../Assets/check.png';
 import DangerPNG from '../../Assets/danger.png';
 import Button from './Button'
 import { StyledAlertStatus } from '../../styled-components/Styles';
+
 
 const AlertStatus = (props) => {
 
@@ -29,6 +32,12 @@ const AlertStatus = (props) => {
             break;
     }
 
+    const dispatch = useDispatch();
+
+    const closeModalHandler = () => {
+        dispatch(alertAction.closeAlert())
+    }
+
     return (
         <StyledAlertStatus style={bgColor}>
             <figure>
@@ -37,9 +46,11 @@ const AlertStatus = (props) => {
             <main>
                 <h3>{props.children}</h3>
             </main>
+            {!props.hideButton && (
             <footer>
-                <Button>OK!</Button>
+                <Button onClick={closeModalHandler}>OK!</Button>
             </footer>
+            )}
 
         </StyledAlertStatus>
     )

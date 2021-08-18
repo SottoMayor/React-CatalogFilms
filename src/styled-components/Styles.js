@@ -164,6 +164,8 @@ export const StyledAlertStatus = styled.section`
   &{
     ${UICard};
     padding: 10px 0;
+    max-width: 768px;
+    margin: 0 auto; 
   }
 
   & > figure{

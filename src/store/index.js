@@ -2,7 +2,7 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const alertSlice = createSlice({
     name: 'UIAlert',
-    initialState: { show: true },
+    initialState: { show: false },
     reducers:{
         showAlert(state){
             state.show = true;
