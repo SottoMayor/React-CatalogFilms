@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components"
 
+// UI Styles
 export const UICard = css`
 
   box-shadow: 4px 4px 10px -5px rgba(0,0,0,0.75);
@@ -7,49 +8,35 @@ export const UICard = css`
 
 `
 
-export const StyledHeader = styled.header`
+export const UIButton = css`
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 2%;
-    background-color: ${props => props.theme.primary};
+  & { 
+  padding: 3px;
+  border: 2px solid ${props => props.theme.background};
+  background: ${props => props.theme.primary};
+  color: ${props => props.theme.text};
+  font-size: 17px;
+  cursor: pointer;
+  }
 
-    & > figure > h2{
-        color: ${props => props.theme.text};
-        font-size: 30px;
-    }
+  &:hover{
+    background: ${props => props.theme.secondary};
+    transition: 0.3s;
+  }
 
-    & > nav > ul{
-        display: flex;
-    }
+  .disabled{
+    background: ${props => props.theme.background};
+    color: ${props => props.theme.tertiary};
+    cursor: not-allowed;
+  }
 
-    & > nav > ul > li{
-        margin-right: 25px;
-        list-style-type: none;
-    }
-
-    & > nav > ul > li > a{
-        text-decoration: none;
-        color: ${props => props.theme.text};
-        font-size: 18px;
-    }
-
-    & > nav > ul > li > a:hover,
-    & > nav > ul > li > a:active,
-    & > nav > ul > li > a.active
-    {
-        color: ${props => props.theme.background};
-        border-bottom: 2px solid ${props => props.theme.background};
-    }
 
 `
+// Styled Components UIs
 
-export const StyledContainer = styled.main`
+export const StyledButton = styled.button`
 
-    padding: 3% 2%;
-    margin: 0 auto;
-    display: block;
+  ${UIButton}
 
 `
 
@@ -136,6 +123,54 @@ export const StyledLoading = styled.div`
   }
 `
 
+// Styled Components
+
+export const StyledHeader = styled.header`
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 2%;
+    background-color: ${props => props.theme.primary};
+
+    & > figure > h2{
+        color: ${props => props.theme.text};
+        font-size: 30px;
+    }
+
+    & > nav > ul{
+        display: flex;
+    }
+
+    & > nav > ul > li{
+        margin-right: 25px;
+        list-style-type: none;
+    }
+
+    & > nav > ul > li > a{
+        text-decoration: none;
+        color: ${props => props.theme.text};
+        font-size: 18px;
+    }
+
+    & > nav > ul > li > a:hover,
+    & > nav > ul > li > a:active,
+    & > nav > ul > li > a.active
+    {
+        color: ${props => props.theme.background};
+        border-bottom: 2px solid ${props => props.theme.background};
+    }
+
+`
+
+export const StyledContainer = styled.main`
+
+    padding: 3% 2%;
+    margin: 0 auto;
+    display: block;
+
+`
+
 export const StyledFilm = styled.article`
 
   &{
@@ -175,7 +210,7 @@ export const StyledFilm = styled.article`
   }
 
   .info__btn{
-    margin-top: calc(50px + 2%);
+    margin-top: 40px;
     display: flex;
     justify-content: flex-end;
   }

@@ -1,8 +1,13 @@
 import React from 'react'
-import { StyledFilm } from '../styled-components/Styles'
+import { StyledFilm } from '../styled-components/Styles';
+import Button from './UI/Button';
 
 const Film = (props) => {
-    console.log(props)
+
+    const testerHandler = () => {
+        console.log('This works!')
+    }
+
     return (
         <StyledFilm>
             <figure className="figure">
@@ -11,9 +16,9 @@ const Film = (props) => {
 
             <section className="info">
                 <div className="info__name">{props.nome}</div>
-                
+
                 <div className="info__btn">
-                    <button >Ver Detalhes</button>
+                    <Button onClick={testerHandler}>Ver Detalhes</Button>
                 </div>
             </section>
         </StyledFilm>
