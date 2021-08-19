@@ -28,7 +28,7 @@ const Film = (props) => {
 
                         {
                             props.favorits && (
-                                <Button onClick={() => {props.onDeleteFilm()}}>Deletar</Button>
+                                <Button onClick={() => {props.onDeleteFilm(props.id)}}>Deletar</Button>
                             )
                         }
                         

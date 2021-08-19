@@ -6,16 +6,15 @@ const Favorits = () => {
     const [favorits, setFavorits] = useState([])
     
     // Getting films of the localStorage
-    useEffect(() =>{
+    useEffect(() => {
         const favoritFilms = localStorage.getItem('filmes');
         setFavorits(JSON.parse(favoritFilms));
-    }, [])
+    }, []);
 
-    // Updating films of the localStorage
-
-
-    const deleteFilmHandler = () => {
-        console.log('clicked!')
+    
+    const deleteFilmHandler = (filmId) => {
+        const updatedFavorits = favorits.filter( film => film.id !== filmId );
+        setFavorits(updatedFavorits);
     }
 
     return (
