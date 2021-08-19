@@ -40,10 +40,14 @@ const FilmDetails = () => {
     },[loadingFilmsHandler])
     
 
+    const favoriteHandler = () => {
+        
+        localStorage.setItem('filmes', JSON.stringify(film))
+    }
     
     return (
         <div>
-            <FilmCard film={film} loading={loading} error={error} message={message}/>
+            <FilmCard onFavorite={favoriteHandler} film={film} loading={loading} error={error} message={message}/>
         </div>
     )
 }

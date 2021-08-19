@@ -36,7 +36,7 @@ const FilmCard = (props) => {
                         <p className='card-container__text'>{props.film.sinopse}</p>
                     </div>
                     <footer className='card-container__footer'>
-                        <Button>Favoritar</Button>
+                        <Button onClick={() => props.onFavorite()}>Favoritar</Button>
                             <a className='footer__link'target="blank"
                             href={`https://youtube.com/results?search_query=${props.film.nome} Trailer`}
                             >Ver Trailer</a>
