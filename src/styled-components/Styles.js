@@ -40,6 +40,15 @@ export const StyledButton = styled.button`
 
 `
 
+export const StyledLink = styled.div`
+
+  & > a {
+    ${UIButton};
+    text-decoration: none;
+  }
+
+`
+
 export const StyledLoading = styled.div`
 .loader {
     color: ${props => props.theme.tertiary};
