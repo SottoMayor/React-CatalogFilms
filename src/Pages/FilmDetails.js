@@ -2,8 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from '../axios';
 
-import Loading from '../Components/UI/Loading';
-import AlertStatus from '../Components/UI/AlertStatus';
+import FilmCard from '../Components/FilmCard'
 
 const FilmDetails = () => {
 
@@ -41,44 +40,12 @@ const FilmDetails = () => {
     },[loadingFilmsHandler])
     
 
+    
     return (
-        
         <div>
-            {loading && <Loading/>}
-
-            {!loading && !error && (
-            <div>
-                <header>
-                        <button>Voltar</button>
-                </header>
-
-                <figure>
-                    <img src={film.foto} alt={film.nome}/>
-                </figure>
-
-                <section>
-                    <div>
-                        <h2>{film.nome}</h2>
-                        <p>{film.sinopse}</p>
-                    </div>
-                    <footer>
-                        <button>Favoritar</button>
-                        <a
-                        target="blank"
-                        href={`https://youtube.com/results?search_query=${film.nome} Trailer`}
-                        >Ver Trailer</a>
-                    </footer>
-                </section>
-            </div>
-            )}
-
-            {!loading && error && (
-                    <AlertStatus status='fail' hideButton>{message}</AlertStatus>
-            )}
+            <FilmCard film={film} loading={loading} error={error} message={message}/>
         </div>
-        
-        
     )
 }
 
-export default FilmDetails
+export default FilmDetails;

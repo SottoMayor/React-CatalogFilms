@@ -302,3 +302,70 @@ export const StyledFilm = styled.article`
 
 
 `
+
+export const StyledFilmCard = styled.main`
+
+  &{
+    
+  }
+
+  .goBack {
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .goBack: hover{
+    ${UICard};
+    border-radius: 50%;
+  }
+
+  .goBack img{
+    width: 100%;
+  }
+
+  .card-container{
+    display: block;
+    margin: 0 auto;
+  }
+
+  .figure {
+    width: 100%;
+    max-width: 768px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .figure img{
+    width: 100%;
+    ${UICard};
+  }
+
+  .card-container__title, 
+  .card-container__text{
+    text-align: justify;
+    max-width: 768px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 18px;
+  }
+
+  .card-container__title{
+    font-size: 23px;
+    text-align: center;
+  }
+  
+  .card-container__footer{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    margin: 0 2%;
+  }
+
+  .footer__link{
+    ${UIButton};
+    text-decoration: none;
+  }
+`
