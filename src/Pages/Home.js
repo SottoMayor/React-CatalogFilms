@@ -23,8 +23,8 @@ const Home = () => {
     }
     
     const loadingFilmsHandler = useCallback( async () => {
-        setError(null)
         setLoading(true);
+        setError(null)
         try{
             const response = await axios.get('/r-api/?api=filmes/');
             

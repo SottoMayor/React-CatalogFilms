@@ -4,6 +4,7 @@ import { theme } from "./styled-components/Theme";
 import Layout from "./Layout/Layout";
 import { Switch, Route, Redirect } from 'react-router-dom'
 import Home from './Pages/Home';
+import FilmDetails from './Pages/FilmDetails';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           </Route>
 
           <Route path="/filmes/:filmId">
-            <h4>Film Details</h4>
+            <FilmDetails/>
           </Route>
 
           <Route path="/login">
